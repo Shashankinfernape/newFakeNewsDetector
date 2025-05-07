@@ -65,7 +65,7 @@ reported to the community leaders responsible for enforcement at:
 
 Shashank
 Student, Priyadarshini Engineering College, Vaniyambadi, India
-✉ [infernapeshashank@gmail.com]
+✉ [2infernapeshashank@gmail.com]
 
 All complaints will be reviewed and investigated promptly and fairly.
 All community leaders are obligated to respect the privacy and security of the
