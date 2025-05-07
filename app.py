@@ -98,6 +98,7 @@ def set_background(image_path):
         font-weight: 600;
         border: none;
         border-radius: 14px;
+<<<<<<< HEAD
         padding: 0.65rem 1.8rem;
         margin-top: 0.5rem;
         font-family: 'Poppins', sans-serif;
@@ -111,6 +112,20 @@ def set_background(image_path):
         transform: scale(1.03);
         box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
         background: linear-gradient(135deg, #a777e3, #6e8efb);
+=======
+        padding: 0.7rem 1.8rem;
+        margin-top: 1rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease;
+    }}
+
+    .stButton > button:hover {{
+        transform: scale(1.05);
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+        background: linear-gradient(135deg, #764ba2, #667eea);
+>>>>>>> 0f99273f9078f81254a1fd06a7406c5d8071bf4e
     }}
 
     .result-box {{
