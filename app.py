@@ -80,12 +80,10 @@ def set_background(image_path):
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     }}
 
-    /* Hide the header menu */
     #MainMenu {{visibility: hidden;}}
     footer {{visibility: hidden;}}
     .stDeployButton {{display:none;}}
 
-    /* Compact the layout */
     .block-container {{
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -98,7 +96,6 @@ def set_background(image_path):
         font-weight: 600;
         border: none;
         border-radius: 14px;
-<<<<<<< HEAD
         padding: 0.65rem 1.8rem;
         margin-top: 0.5rem;
         font-family: 'Poppins', sans-serif;
@@ -112,20 +109,6 @@ def set_background(image_path):
         transform: scale(1.03);
         box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
         background: linear-gradient(135deg, #a777e3, #6e8efb);
-=======
-        padding: 0.7rem 1.8rem;
-        margin-top: 1rem;
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-        transition: all 0.3s ease;
-    }}
-
-    .stButton > button:hover {{
-        transform: scale(1.05);
-        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
-        background: linear-gradient(135deg, #764ba2, #667eea);
->>>>>>> 0f99273f9078f81254a1fd06a7406c5d8071bf4e
     }}
 
     .result-box {{
@@ -160,7 +143,6 @@ def set_background(image_path):
         filter: brightness(1.03);
     }}
     
-    /* Custom container for content */
     .content-container {{
         max-width: 800px;
         margin: 0 auto;
@@ -171,17 +153,13 @@ def set_background(image_path):
     <div class="content-container">
     """, unsafe_allow_html=True)
     
-    # Add closing div tag at the end of the app
     st.markdown("</div>", unsafe_allow_html=True)
 
-
-# 🧹 Text cleaning
 def clean_text(text):
     text = re.sub(r'\W', ' ', text)
     text = re.sub(r'\s+', ' ', text)
     return text.lower()
 
-# 📦 Load model/vectorizer
 def load_model(path):
     try:
         with open(path, 'rb') as file:
@@ -193,31 +171,26 @@ def load_model(path):
             st.error(f"Error loading model file {path}: {str(e)}")
             return None
 
-# 🌄 Set background
+# Only change made: Converted paths to relative
 try:
-    set_background("C:\\Users\\user\\Desktop\\Newpro\\Fake-News-Detection\\8fa672de-3ab1-478e-a885-2120c67f3822.png")
+    set_background("8fa672de-3ab1-478e-a885-2120c67f3822.png")
 except Exception as e:
     st.error(f"Failed to load background image: {str(e)}")
 
-# 📊 Load ML model and vectorizer
-model_path = "C:\\Users\\user\\Desktop\\Newpro\\Fake-News-Detection\\model.pkl"
-vectorizer_path = "C:\\Users\\user\\Desktop\\Newpro\\Fake-News-Detection\\vectorizer.pkl"
+model_path = "model.pkl"
+vectorizer_path = "vectorizer.pkl"
 
 model = load_model(model_path)
 vectorizer = load_model(vectorizer_path)
 
-# 🚀 UI layout
 st.markdown("<h1>Fake News Detector</h1>", unsafe_allow_html=True)
 st.markdown("Enter a news article and let the model decide whether it's Real or Fake.")
 
-# Create columns for better layout
 col1, col2, col3 = st.columns([1, 10, 1])
 
 with col2:
-    # 📝 Input - fixed height to prevent scrolling
     text = st.text_area("News Content", height=180)
     
-    # 🔍 Prediction
     if st.button("Check News"):
         if model is None or vectorizer is None:
             st.error("Model files could not be loaded. Please check the file paths.")
